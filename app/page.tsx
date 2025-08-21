@@ -12,10 +12,7 @@ import {
   Mail,
   Github,
   Linkedin,
-  Send,
   GraduationCap,
-  BookOpen,
-  School,
   University,
   Trophy,
   Rocket,
@@ -43,16 +40,6 @@ const translations = {
       title: "Mi Trayectoria",
       subtitle: "El camino recorrido y hacia dónde voy",
       education: {
-        primary: {
-          title: "Educación Primaria",
-          institution: "CEIP San Juan Bautista",
-          description: "Donde comenzó todo",
-        },
-        secondary: {
-          title: "Educación Secundaria",
-          institution: "IES San José",
-          description: "Desarrollando las bases",
-        },
         bachillerato: {
           title: "Bachillerato",
           institution: "IES San José",
@@ -85,7 +72,7 @@ const translations = {
       technical: {
         title: "Habilidades Técnicas",
         description:
-          "Durante mi doctorado desarrollé múltiples herramientas especializadas en seguridad de la cadena de suministro de software utilizando tecnologías como FastAPI para APIs robustas, MongoDB para almacenamiento de datos de vulnerabilidades, y Neo4J para modelar relaciones complejas entre dependencias. Todo el ecosistema se desplegó con Docker para garantizar reproducibilidad. Actualmente, estoy unificando todas estas herramientas bajo SecureChain, una plataforma integral que he desarrollado desde cero usando NextJS para el frontend, creando una solución completa para el análisis y gestión de vulnerabilidades en proyectos de software.",
+          "Durante mi doctorado me centré en fortalecer la seguridad de la cadena de suministro de software mediante el desarrollo de diversas herramientas orientadas al análisis de vulnerabilidades y a la trazabilidad de dependencias. Todo ese trabajo desembocó en SecureChain, una plataforma integral que he diseñado y construido desde cero para ofrecer una solución completa de análisis y gestión de riesgos en proyectos de software.",
       },
       publications: {
         title: "Publicaciones Científicas",
@@ -158,16 +145,6 @@ const translations = {
       title: "My Journey",
       subtitle: "The path traveled and where I'm heading",
       education: {
-        primary: {
-          title: "Primary Education",
-          institution: "CEIP San Juan Bautista",
-          description: "Where it all began",
-        },
-        secondary: {
-          title: "Secondary Education",
-          institution: "IES San José",
-          description: "Building the foundations",
-        },
         bachillerato: {
           title: "Baccalaureate",
           institution: "IES San José",
@@ -200,7 +177,7 @@ const translations = {
       technical: {
         title: "Technical Skills",
         description:
-          "During my PhD I developed multiple specialized tools for software supply chain security using technologies such as FastAPI for robust APIs, MongoDB for vulnerability data storage, and Neo4J to model complex relationships between dependencies. The entire ecosystem was deployed with Docker to ensure reproducibility. Currently, I am unifying all these tools under SecureChain, a comprehensive platform that I have developed from scratch using NextJS for the frontend, creating a complete solution for vulnerability analysis and management in software projects.",
+          "During my PhD, I focused on strengthening software supply chain security by developing various tools for vulnerability analysis and dependency traceability. All of this work culminated in SecureChain, a comprehensive platform that I designed and built from scratch to offer a complete solution for risk analysis and management in software projects.",
       },
       publications: {
         title: "Scientific Publications",
@@ -286,7 +263,7 @@ export default function Portfolio() {
     }
 
     window.addEventListener("scroll", handleScroll)
-    handleScroll() // Check initial state
+    handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -295,16 +272,13 @@ export default function Portfolio() {
   }
 
   const handleDownloadCV = () => {
-    // URLs directas de descarga de Google Drive - ACTUALIZADAS
     const cvUrls = {
       es: "https://drive.google.com/uc?export=download&id=1UH6ZIm01ID3_ZzRvyLZyRc_YP9zMHPiZ",
       en: "https://drive.google.com/uc?export=download&id=1dwY3jKimzQU5fBF83xRPi2JgDo-WETWo",
     }
 
     const cvUrl = cvUrls[language]
-    const fileName = `CV_${language.toUpperCase()}_Antonio_German_Marquez.pdf`
 
-    // Abrir en nueva pestaña para descarga
     window.open(cvUrl, "_blank")
   }
 
@@ -319,6 +293,8 @@ export default function Portfolio() {
     "Ubuntu",
     "Bash",
     "Git",
+    "Java",
+    "Springboot",
     "Kubernetes",
     "Cybersecurity",
     "AI",
@@ -422,81 +398,11 @@ export default function Portfolio() {
 
             {/* Timeline items */}
             <div className="space-y-20">
-              {/* Primary Education */}
-              <div
-                ref={(el) => (timelineRefs.current[0] = el)}
-                className={`flex items-center transition-all duration-700 ${
-                  visibleItems.includes(0) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-              >
-                <div className="w-1/2 pr-8 text-right">
-                  <Card className="ml-auto max-w-md hover:shadow-xl hover:scale-105 transition-all duration-300 border-l-4 border-l-blue-400 group">
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-end mb-3">
-                        <div className="mr-3">
-                          <h3 className="text-xl font-bold mb-1">{t.roadmap.education.primary.title}</h3>
-                          <div className="flex items-center justify-end text-sm text-gray-500 dark:text-gray-400">
-                            <Calendar className="w-4 h-4 mr-1" />
-                            <span>2004-2010</span>
-                          </div>
-                        </div>
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <School className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-                      <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">
-                        {t.roadmap.education.primary.institution}
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-300">{t.roadmap.education.primary.description}</p>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full border-4 border-white dark:border-gray-900 z-10 relative shadow-lg hover:scale-125 transition-transform duration-300 cursor-pointer">
-                  <div className="absolute inset-0 bg-blue-400 rounded-full animate-ping opacity-20"></div>
-                </div>
-                <div className="w-1/2" />
-              </div>
-
-              {/* Secondary Education */}
-              <div
-                ref={(el) => (timelineRefs.current[1] = el)}
-                className={`flex items-center transition-all duration-700 ${
-                  visibleItems.includes(1) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-              >
-                <div className="w-1/2" />
-                <div className="w-6 h-6 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full border-4 border-white dark:border-gray-900 z-10 relative shadow-lg hover:scale-125 transition-transform duration-300 cursor-pointer">
-                  <div className="absolute inset-0 bg-indigo-400 rounded-full animate-ping opacity-20"></div>
-                </div>
-                <div className="w-1/2 pl-8">
-                  <Card className="max-w-md hover:shadow-xl hover:scale-105 transition-all duration-300 border-l-4 border-l-indigo-400 group">
-                    <CardContent className="p-6">
-                      <div className="flex items-center mb-3">
-                        <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
-                          <BookOpen className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold mb-1">{t.roadmap.education.secondary.title}</h3>
-                          <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                            <Calendar className="w-4 h-4 mr-1" />
-                            <span>2010-2014</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="text-indigo-600 dark:text-indigo-400 font-semibold mb-2">
-                        {t.roadmap.education.secondary.institution}
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-300">{t.roadmap.education.secondary.description}</p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-
               {/* Bachillerato */}
               <div
-                ref={(el) => (timelineRefs.current[2] = el)}
+                ref={el => { timelineRefs.current[0] = el }}
                 className={`flex items-center transition-all duration-700 ${
-                  visibleItems.includes(2) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  visibleItems.includes(0) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
                 <div className="w-1/2 pr-8 text-right">
@@ -529,9 +435,9 @@ export default function Portfolio() {
 
               {/* Bachelor's Degree */}
               <div
-                ref={(el) => (timelineRefs.current[3] = el)}
+                ref={el => { timelineRefs.current[1] = el }}
                 className={`flex items-center transition-all duration-700 ${
-                  visibleItems.includes(3) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  visibleItems.includes(1) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
                 <div className="w-1/2" />
@@ -564,9 +470,9 @@ export default function Portfolio() {
 
               {/* Master's Degree */}
               <div
-                ref={(el) => (timelineRefs.current[4] = el)}
+                ref={el => { timelineRefs.current[2] = el }}
                 className={`flex items-center transition-all duration-700 ${
-                  visibleItems.includes(4) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  visibleItems.includes(2) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
                 <div className="w-1/2 pr-8 text-right">
@@ -599,9 +505,9 @@ export default function Portfolio() {
 
               {/* Current - PhD */}
               <div
-                ref={(el) => (timelineRefs.current[5] = el)}
+                ref={el => { timelineRefs.current[3] = el }}
                 className={`flex items-center transition-all duration-700 ${
-                  visibleItems.includes(5) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  visibleItems.includes(3) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
                 <div className="w-1/2" />
@@ -636,9 +542,9 @@ export default function Portfolio() {
 
               {/* Future */}
               <div
-                ref={(el) => (timelineRefs.current[6] = el)}
+                ref={el => { timelineRefs.current[4] = el }}
                 className={`flex items-center transition-all duration-700 ${
-                  visibleItems.includes(6) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  visibleItems.includes(4) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
                 <div className="w-1/2 pr-8 text-right">
@@ -677,64 +583,6 @@ export default function Portfolio() {
 
             {/* Timeline items for mobile */}
             <div className="space-y-8">
-              {/* Primary Education - Mobile */}
-              <div className="flex items-start">
-                <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full border-4 border-white dark:border-gray-900 z-10 relative mr-6 mt-6 shadow-lg">
-                  <div className="absolute inset-0 bg-blue-400 rounded-full animate-ping opacity-20"></div>
-                </div>
-                <Card className="flex-1 hover:shadow-lg transition-all duration-300 border-l-4 border-l-blue-400 group">
-                  <CardContent className="p-4">
-                    <div className="flex items-center mb-2">
-                      <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
-                        <School className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold">{t.roadmap.education.primary.title}</h3>
-                        <div className="flex items-center text-xs text-gray-500 dark:text-gray-400">
-                          <Calendar className="w-3 h-3 mr-1" />
-                          <span>2004-2010</span>
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2 text-sm">
-                      {t.roadmap.education.primary.institution}
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      {t.roadmap.education.primary.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Secondary Education - Mobile */}
-              <div className="flex items-start">
-                <div className="w-6 h-6 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full border-4 border-white dark:border-gray-900 z-10 relative mr-6 mt-6 shadow-lg">
-                  <div className="absolute inset-0 bg-indigo-400 rounded-full animate-ping opacity-20"></div>
-                </div>
-                <Card className="flex-1 hover:shadow-lg transition-all duration-300 border-l-4 border-l-indigo-400 group">
-                  <CardContent className="p-4">
-                    <div className="flex items-center mb-2">
-                      <div className="w-10 h-10 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
-                        <BookOpen className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold">{t.roadmap.education.secondary.title}</h3>
-                        <div className="flex items-center text-xs text-gray-500 dark:text-gray-400">
-                          <Calendar className="w-3 h-3 mr-1" />
-                          <span>2010-2014</span>
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-indigo-600 dark:text-indigo-400 font-semibold mb-2 text-sm">
-                      {t.roadmap.education.secondary.institution}
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      {t.roadmap.education.secondary.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-
               {/* Bachillerato - Mobile */}
               <div className="flex items-start">
                 <div className="w-6 h-6 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full border-4 border-white dark:border-gray-900 z-10 relative mr-6 mt-6 shadow-lg">
@@ -1006,13 +854,6 @@ export default function Portfolio() {
               >
                 <Linkedin className="mr-2 h-5 w-5" />
                 LinkedIn
-              </a>
-            </Button>
-
-            <Button size="lg" variant="outline" asChild>
-              <a href="https://t.me/German1998x" target="_blank" rel="noopener noreferrer">
-                <Send className="mr-2 h-5 w-5" />
-                Telegram
               </a>
             </Button>
           </div>

@@ -10,8 +10,7 @@ export const metadata: Metadata = {
   description: "Portfolio de Antonio Germán Márquez Trujillo - Doctor en Ingeniería Informática",
   icons: {
     icon: "/favicon.png",
-  },
-    generator: 'v0.dev'
+  }
 }
 
 export default function RootLayout({
