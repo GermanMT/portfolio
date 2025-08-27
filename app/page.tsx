@@ -273,13 +273,19 @@ export default function Portfolio() {
 
   const handleDownloadCV = () => {
     const cvUrls = {
-      es: "https://drive.google.com/uc?export=download&id=1UH6ZIm01ID3_ZzRvyLZyRc_YP9zMHPiZ",
-      en: "https://drive.google.com/uc?export=download&id=1dwY3jKimzQU5fBF83xRPi2JgDo-WETWo",
+      es: "/CVs/CV_ES_Antonio_German_Marquez_Trujillo.pdf",
+      en: "/CVs/CV_EN_Antonio_German_Marquez_Trujillo.pdf",
     }
 
     const cvUrl = cvUrls[language]
 
-    window.open(cvUrl, "_blank")
+    // Create a link element to trigger the download
+    const link = document.createElement('a')
+    link.href = cvUrl
+    link.download = cvUrl.split('/').pop() || 'CV.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
   }
 
   const technologies = [
