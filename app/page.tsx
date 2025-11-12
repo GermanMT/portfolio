@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -358,10 +359,13 @@ export default function Portfolio() {
             <div className="flex justify-center">
               <div className="relative">
                 <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-white dark:border-gray-700 shadow-2xl">
-                  <img
+                  <Image
                     src="/profile.jpeg"
                     alt="Antonio Germán Márquez Trujillo"
+                    width={320}
+                    height={320}
                     className="w-full h-full object-cover"
+                    priority
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
@@ -764,7 +768,7 @@ export default function Portfolio() {
                     rel="noopener noreferrer"
                     className="text-blue-600 dark:text-blue-400 hover:underline font-semibold flex items-center gap-2"
                   >
-                    <img src="/securechain-logo.ico" alt="SecureChain Logo" className="w-8 h-8" />
+                    <Image src="/securechain-logo.ico" alt="SecureChain Logo" width={32} height={32} className="w-8 h-8" />
                     SecureChain.dev →
                   </a>
                 </div>
