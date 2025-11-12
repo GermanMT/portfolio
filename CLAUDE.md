@@ -54,6 +54,13 @@
 - **embla-carousel-react** - Carousels
 - **date-fns** - Date manipulation
 - **vaul** - Drawers
+- **react-icons** - Brand icons (GitHub, LinkedIn, Google Scholar)
+- **@vercel/analytics** - Analytics tracking
+- **sonner** - Toasts/notifications
+- **recharts** - Charts
+- **embla-carousel-react** - Carousels
+- **date-fns** - Date manipulation
+- **vaul** - Drawers
 
 ## 📁 Project Structure
 
@@ -100,6 +107,7 @@ portfolio/
    - Milestones: Baccalaureate (2014-2016), Bachelor's (2016-2020), Master's (2020-2021), PhD (2021-2025), Future (2025+)
    - Themed icons and color gradients per stage
    - Cards with hover effects and animations
+   - Link to doctoral thesis in IDUS
 
 4. **Skills Section**
    - **Technical Skills**: 
@@ -114,10 +122,16 @@ portfolio/
      - Conference participation (JNIC, JISBD, SPLC)
      - Proposal for PyConES 2025
 
-5. **Contact Section**
-   - Buttons with links to: Email, GitHub, LinkedIn
+5. **Projects Section** ✨ NEW
+   - Dedicated section showcasing SecureChain platform
+   - Features list and technology stack
+   - Visual card with gradient header
+   - Direct link to live platform
 
-6. **Footer**
+6. **Contact Section**
+   - Buttons with links to: Email, GitHub, LinkedIn, Google Scholar ✨ NEW
+
+7. **Footer**
    - Copyright and all rights reserved
 
 ### Internationalization (i18n)
@@ -126,16 +140,20 @@ Translation system integrated in component with `translations` object:
 - Available languages: Spanish (`es`), English (`en`)
 - All sections are translated
 - Language controlled with local state (`useState`)
+- **Persistent preferences** ✨ NEW: Language and theme saved in localStorage
+- **Auto-detection** ✨ NEW: Browser language detected on first visit
 
 ### UX/UI Features
 
 - **Responsive Design**: Specific breakpoints for mobile and desktop
+- **Mobile Menu** ✨ NEW: Hamburger menu with smooth animations
 - **Dark Mode**: Implemented with Tailwind classes (`dark:`)
 - **Animations**:
   - Scroll reveal with `IntersectionObserver`
   - Hover effects on cards
   - Ping/pulse animations on timeline
   - Animated gradients
+  - Mobile menu slide-in animation
 - **Accessibility**: Radix UI components with ARIA support
 
 ## 🎯 Important Configuration
@@ -161,9 +179,17 @@ Translation system integrated in component with `translations` object:
 
 ### Next.js
 - App Router (Next.js 15)
-- Metadata configured in layout.tsx
-- Title: "Germán Márquez"
-- Description: "Portfolio de Antonio Germán Márquez Trujillo - Doctor en Ingeniería Informática"
+- Metadata configured in layout.tsx with full SEO ✨ NEW
+- Title: "Antonio Germán Márquez Trujillo - PhD in Computer Engineering"
+- Open Graph tags for social media ✨ NEW
+- Twitter Card support ✨ NEW
+- Sitemap.xml auto-generated ✨ NEW
+- Robots.txt configured ✨ NEW
+
+### Analytics ✨ NEW
+- **Vercel Analytics** integrated for visitor tracking
+- Automatically tracks page views and interactions
+- Privacy-focused, GDPR compliant
 
 ## 📦 Available Scripts
 
@@ -176,10 +202,13 @@ pnpm lint     # ESLint linter
 
 ## 🔗 Important Links
 
+- **Portfolio**: https://portfolio-germanmt.vercel.app ✨ NEW
 - **GitHub**: https://github.com/GermanMT
 - **LinkedIn**: https://www.linkedin.com/in/antonio-germ%C3%A1n-m%C3%A1rquez-trujillo-0aaa63215/
+- **Google Scholar**: https://scholar.google.es/citations?hl=es&user=Lv7HBqMAAAAJ ✨ NEW
 - **Email**: germanoctako@gmail.com
 - **SecureChain**: https://securechain.dev/
+- **Doctoral Thesis**: https://idus.us.es/items/b9a2da42-7468-4c6d-a6f6-f242c23274e5 ✨ NEW
 - **PyConES 2025**: https://2025.es.pycon.org/
 
 ### Publications (DOIs)
@@ -257,8 +286,56 @@ The owner is currently seeking job opportunities in the industry:
 - Interest in continuous professional growth
 - Available for offers in software development, cybersecurity, or related areas
 
+## 🚀 Recent Updates (November 2025)
+
+### High Priority Improvements Implemented:
+
+1. **✅ Mobile Navigation Menu**
+   - Responsive hamburger menu for mobile devices
+   - Smooth slide-in animation
+   - Auto-closes when navigating to sections
+   - Icons: Menu (hamburger) and X (close)
+
+2. **✅ Enhanced SEO**
+   - Complete Open Graph tags for social media
+   - Twitter Card support
+   - Dynamic metadata with keywords
+   - Auto-generated sitemap.xml
+   - Robots.txt configuration
+   - Improved meta descriptions in multiple languages
+
+3. **✅ Projects Section**
+   - New dedicated section showcasing SecureChain
+   - Visual card with gradient header
+   - Features list with bullet points
+   - Technology stack badges
+   - Call-to-action button to visit platform
+   - Available in both languages
+
+4. **✅ Persistent User Preferences**
+   - Language preference saved in localStorage
+   - Theme preference (light/dark) saved in localStorage
+   - Auto-detection of browser language on first visit
+   - Seamless experience across sessions
+
+5. **✅ Vercel Analytics**
+   - Integrated @vercel/analytics package
+   - Privacy-focused tracking
+   - Page view and interaction analytics
+   - Zero configuration required
+   - GDPR compliant
+
+### Additional Improvements:
+
+- Fixed deprecated brand icons (Github, Linkedin) by migrating to react-icons
+- Optimized images using Next.js Image component
+- Added Google Scholar link in contact section
+- Added doctoral thesis link with styled button in PhD section
+- Improved contrast and accessibility
+- Better mobile responsiveness
+
 ---
 
-**Last update**: November 2025
+**Last update**: November 12, 2025
 **Maintainer**: Antonio Germán Márquez Trujillo
 **Contact**: germanoctako@gmail.com
