@@ -11,8 +11,6 @@ import {
   Sun,
   Moon,
   Mail,
-  Github,
-  Linkedin,
   GraduationCap,
   University,
   Trophy,
@@ -20,6 +18,7 @@ import {
   Star,
   Calendar,
 } from "lucide-react"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 const translations = {
   es: {
@@ -851,7 +850,7 @@ export default function Portfolio() {
 
             <Button size="lg" variant="outline" asChild>
               <a href="https://github.com/GermanMT" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-5 w-5" />
+                <FaGithub className="mr-2 h-5 w-5" />
                 GitHub
               </a>
             </Button>
@@ -862,7 +861,7 @@ export default function Portfolio() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin className="mr-2 h-5 w-5" />
+                <FaLinkedin className="mr-2 h-5 w-5" />
                 LinkedIn
               </a>
             </Button>
