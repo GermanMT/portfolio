@@ -17,6 +17,8 @@ import {
   Rocket,
   Star,
   Calendar,
+  FileText,
+  ExternalLink,
 } from "lucide-react"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { SiGooglescholar } from "react-icons/si"
@@ -61,6 +63,7 @@ const translations = {
         title: "Presente - Doctor",
         description:
           'Acabo de defender mi tesis doctoral con honores Cum Laude: "Una propuesta para un enfoque integral que mejore la seguridad de la cadena de suministro de software mediante automatización, trazabilidad e inteligencia artificial para fortalecer la resiliencia del ecosistema de desarrollo de software"',
+        thesisLink: "Ver tesis doctoral",
       },
       future: {
         title: "Futuro - Nuevos Horizontes",
@@ -166,6 +169,7 @@ const translations = {
         title: "Present - PhD",
         description:
           'I have just defended my doctoral thesis with Cum Laude honours: "A proposal for a comprehensive approach that improves software supply chain security through automation, traceability and artificial intelligence to strengthen the resilience of the software development ecosystem"',
+        thesisLink: "View doctoral thesis",
       },
       future: {
         title: "Future - New Horizons",
@@ -545,6 +549,18 @@ export default function Portfolio() {
                       <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t.roadmap.current.description}
                       </p>
+                      <div className="mt-4 pt-4 border-t border-green-200 dark:border-green-700">
+                        <a
+                          href="https://idus.us.es/items/b9a2da42-7468-4c6d-a6f6-f242c23274e5"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg hover:bg-green-200 dark:hover:bg-green-900/50 transition-all duration-300 font-semibold group"
+                        >
+                          <FileText className="w-5 h-5" />
+                          {t.roadmap.current.thesisLink}
+                          <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                        </a>
+                      </div>
                     </CardContent>
                   </Card>
                 </div>
@@ -703,6 +719,18 @@ export default function Portfolio() {
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
                       {t.roadmap.current.description}
                     </p>
+                    <div className="mt-3 pt-3 border-t border-green-200 dark:border-green-700">
+                      <a
+                        href="https://idus.us.es/items/b9a2da42-7468-4c6d-a6f6-f242c23274e5"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-3 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg hover:bg-green-200 dark:hover:bg-green-900/50 transition-all duration-300 font-semibold text-sm group"
+                      >
+                        <FileText className="w-4 h-4" />
+                        {t.roadmap.current.thesisLink}
+                        <ExternalLink className="w-3 h-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                      </a>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
