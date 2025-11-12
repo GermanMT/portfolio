@@ -19,6 +19,7 @@ import {
   Calendar,
 } from "lucide-react"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { SiGooglescholar } from "react-icons/si"
 
 const translations = {
   es: {
@@ -863,6 +864,17 @@ export default function Portfolio() {
               >
                 <FaLinkedin className="mr-2 h-5 w-5" />
                 LinkedIn
+              </a>
+            </Button>
+
+            <Button size="lg" variant="outline" asChild>
+              <a
+                href="https://scholar.google.es/citations?hl=es&user=Lv7HBqMAAAAJ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SiGooglescholar className="mr-2 h-5 w-5" />
+                Google Scholar
               </a>
             </Button>
           </div>
